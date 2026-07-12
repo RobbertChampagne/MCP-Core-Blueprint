@@ -1,13 +1,9 @@
 # MCP-Core-Blueprint
 **Local Integration Architecture & Configuration Guide**
 
-<table width="100%" style="background-color: #ffffff; border-radius: 8px; border: 1px solid #e1e4e8; border-collapse: separate; padding: 20px;" cellpadding="20">
-<tr>
-<td align="center" valign="middle" style="background-color: #ffffff; border-radius: 8px;">
-<img src="assets/modelcontextprotocol.svg" alt="pytest" width="200" style="vertical-align: middle;">
-</td>
-</tr>
-</table>
+<p align="center">
+  <img src="assets/banner.png" alt="MCP Banner" width="250">
+</p>
 
 <br>
 
