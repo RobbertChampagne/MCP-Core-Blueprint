@@ -2,22 +2,21 @@
 **Local Integration Architecture & Configuration Guide**
 
 <table width="100%" style="background-color: #ffffff; border-radius: 8px; border: 1px solid #e1e4e8; border-collapse: separate; padding: 20px;" cellpadding="20">
-  <tr>
-    <td align="center" valign="middle" style="background-color: #ffffff; border-radius: 8px;">
-      <!-- Main Logo (Always Black on White Background) -->
-      <img src="assets/modelcontextprotocol.svg" alt="pytest" width="200" style="vertical-align: middle;">
-    </td>
-  </tr>
+<tr>
+<td align="center" valign="middle" style="background-color: #ffffff; border-radius: 8px;">
+<img src="assets/modelcontextprotocol.svg" alt="pytest" width="200" style="vertical-align: middle;">
+</td>
+</tr>
 </table>
 
 <br>
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <img src="assets/python.svg" alt="Python">
-  <img src="assets/mcp.svg" alt="MCP">
-  <img src="assets/ollama.svg" alt="Ollama">
-  <img src="assets/ubuntu.svg" alt="Ubuntu">
-</div>
+<p align="left">
+<img src="assets/python.svg" alt="Python" height="32">&nbsp;
+<img src="assets/mcp.svg" alt="MCP" height="32">&nbsp;
+<img src="assets/ollama.svg" alt="Ollama" height="32">&nbsp;
+<img src="assets/ubuntu.svg" alt="Ubuntu" height="32">
+</p>
 
 <br>
 
@@ -25,8 +24,12 @@
 > This repository serves purely as architectural documentation and an integration showcase.<br> The actual Python source code for `MCP-core` is kept in a private repository. <br>
 >This guide is shared publicly to demonstrate the setup and configuration strategies used to securely bridge local LLMs to development environments.
 
+<br>
+
 ## What is this about?
 `MCP-Core` is the foundational blueprint of a modular Python framework built on the Model Context Protocol (MCP). It is designed to act as a headless, deterministic tool-execution routing system. 
+
+<br>
 
 ## Why was it built?
 Connecting AI models to a local environment typically requires a lot of repetitive configuration and bogs down system performance. Running models (like `qwen3.5:9b` or larger) directly on a primary development machine can easily disrupt daily workflows.
@@ -35,6 +38,7 @@ This architecture eliminates that bottleneck by establishing a secure, persisten
 
 By offloading the heavy processing to the Ubuntu machine, this setup allows for cost-efficient, local execution of AI tasks. It offers a practical alternative to expensive remote LLM APIs, allowing you to run powerful tools locally without compromising your primary workstation’s performance.
 
+<br>
 
 # Setup
 Create a Python project:
@@ -58,7 +62,6 @@ uv add mcp[cli] httpx python-dotenv fastmcp
 ```
 
 <br>
-<br>
 
 # Run the MCP Server: 
 **http**
@@ -76,7 +79,6 @@ uv run python -m mcp_core.app stdio
 ```
 
 <br>
-<br>
 
 # Run the MCP Inspector
 (Open a new terminal)
@@ -84,7 +86,6 @@ uv run python -m mcp_core.app stdio
 npx @modelcontextprotocol/inspector
 ```
 
-<br>
 <br>
 
 # Connect the MCP Server to the MCP Inspector
@@ -100,7 +101,6 @@ npx @modelcontextprotocol/inspector
 (or HTTP, depending on Inspector version)
 - URL: `http://localhost:9001/mcp`
 
-<br>
 <br>
 
 # Connect the MCP server to a remote LLM (via VS code)
@@ -126,7 +126,6 @@ The IDE needs an entry point configuration file to know how to spin up the serve
 
 <img src="assets/remote_llm_example.png" alt="Run a tool" style="width: 50%; max-width: 50%; height: auto;">
 
-<br>
 <br>
 
 # Connect the MCP server to a local LLM 
